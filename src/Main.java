@@ -40,17 +40,14 @@ public class Main {
             } else if (operation == 3) {
                 System.out.println("Сколько денег перевести:");
                 double sendMoney = scanner.nextDouble();
-                if (sendMoney > balance) {
-                    balance += sendMoney;
+                if (balance < sendMoney) {
+                    System.out.println("Нельзя перевести денег больше чем у вас есть на счету!");
+                } else {
+                    balance -= sendMoney;
                     System.out.println("---------------------");
                     System.out.println("Ваш баланс " + balance);
                     System.out.println("---------------------");
-                } else
-                    System.out.println("Нельзя перевести денег больше чем у вас есть на счету!");
-                balance -= sendMoney;
-                System.out.println("---------------------");
-                System.out.println("Ваш баланс " + balance);
-                System.out.println("---------------------");
+                }
             } else if (operation == 4) {
                 break;
             } else
